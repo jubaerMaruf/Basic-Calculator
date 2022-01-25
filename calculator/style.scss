@@ -1,0 +1,71 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  background-image: linear-gradient(
+    to right,
+    rgb(0, 255, 80),
+    rgb(0, 255, 255)
+  );
+}
+
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: minmax(80px, auto) repeat(5, 80px);
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 3rem;
+  border: 1px solid white;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.calculator-grid > button:hover {
+  background-color: rgba($color: white, $alpha: 0.9);
+}
+
+.grid-two {
+  grid-column: span 2;
+}
+
+.display {
+  grid-column: 1/-1;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 1rem;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.display .p-operant {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.6rem;
+}
+
+.display .c-operant {
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+}
